@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use '../utils/variables';
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18.33px;
+  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+    gap: 52.79px;
+    width: 483px;
+    padding-right: 30px;
+  }
+}
