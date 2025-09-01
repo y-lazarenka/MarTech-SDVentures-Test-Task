@@ -12,7 +12,9 @@ const del = require('del');
 const paths = {
   js: 'src/**/*.js',
   html: 'src/**/*.html',
-  css: 'src/**/*.scss',
+  css: 'src/scss/**/*.scss',
+  fonts: 'src/fonts/**/*.woff2',
+  assets: 'src/assets/',
   dist: 'dist/',
 };
 
@@ -46,12 +48,24 @@ gulp.task('html', () => {
     .pipe(gulp.dest(paths.dist));
 });
 
+gulp.task('fonts', () => {
+  return gulp
+    .src(paths.fonts, { encoding: false })
+    .pipe(gulp.dest(path.join(paths.dist, 'fonts')));
+});
+
 gulp.task('css', () => {
   return gulp
     .src(paths.css)
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS())
     .pipe(gulp.dest(path.join(paths.dist, 'css')));
+});
+
+gulp.task('images', () => {
+  return gulp
+    .src(path.join(paths.assets, '/images/**/*'))
+    .pipe(gulp.dest(path.join(paths.dist, '/assets/images')));
 });
 
 gulp.task('clean', () => {
@@ -61,10 +75,15 @@ gulp.task('clean', () => {
   ]);
 });
 
-gulp.task('build', gulp.series('clean', 'html', 'css', 'js'));
+gulp.task(
+  'build',
+  gulp.series('clean', 'html', 'fonts', 'css', 'js', 'images')
+);
 
 gulp.task('watch', () => {
   gulp.watch(paths.html, gulp.series('html'));
+  gulp.watch(paths.fonts, gulp.series('fonts'));
   gulp.watch(paths.css, gulp.series('css'));
   gulp.watch(paths.js, gulp.series('js'));
+  gulp.watch(path.join(paths.assets, '/images/**/*'), gulp.series('images'));
 });
