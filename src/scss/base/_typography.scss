@@ -1,0 +1,58 @@
+@use 'sass:map';
+@use '../utils/variables';
+@use '../utils/mixins';
+
+$vivid-counter: vivid-counter;
+
+.hero-list {
+  list-style: none;
+  counter-reset: $vivid-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+    font-size: 30px;
+  }
+}
+
+.hero-li {
+  display: flex;
+  align-items: center;
+  counter-increment: $vivid-counter;
+  font-weight: variables.$font-weight-regular;
+  line-height: 100%;
+  @include mixins.tracking-tight();
+
+  font-size: 18.82px;
+  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+    font-size: 38px;
+  }
+}
+
+.hero-li::before {
+  content: counter($vivid-counter) '.';
+  align-self: end;
+  @include mixins.vivid-display();
+  @include mixins.tracking-tight();
+  font-weight: variables.$font-weight-extra-bold;
+  line-height: 100%;
+
+  margin-right: 10px;
+  font-size: 33px;
+  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+    margin-right: 20px;
+    font-size: 55px;
+  }
+}
+
+.hero-title {
+  @include mixins.vivid-display();
+  @include mixins.tracking-tight();
+  font-weight: variables.$font-weight-extra-bold;
+  line-height: 110%;
+
+  font-size: 35px;
+  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+    font-size: 77px;
+  }
+}

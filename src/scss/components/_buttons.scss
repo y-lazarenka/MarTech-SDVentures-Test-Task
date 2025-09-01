@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use '../utils/variables';
+@use '../utils/mixins';
+
+.primary-btn {
+  cursor: pointer;
+  @include mixins.vivid-bg();
+
+  text-transform: uppercase;
+  color: variables.$text-white;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 6px;
+  font-size: 13.81px;
+  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: 81px;
+    border-radius: 10px;
+    font-size: 23px;
+  }
+}
