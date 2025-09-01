@@ -1,0 +1,21 @@
+@use './variables';
+
+@mixin vivid-bg {
+  background: linear-gradient(
+    145.08deg,
+    variables.$vivid-primary-color 12.35%,
+    variables.$vivid-secondary-color 83.63%
+  );
+}
+
+@mixin vivid-display() {
+  @include vivid-bg();
+  color: variables.$vivid-primary-color;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin tracking-tight {
+  letter-spacing: -2px; // todo: letter-spacing doesn't except % values
+}
