@@ -4,6 +4,8 @@ const eslint = require('gulp-eslint-new');
 const prettier = require('gulp-prettier');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass')(require('sass'));
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const htmlmin = require('gulp-htmlmin');
 const concat = require('gulp-concat');
@@ -58,6 +60,7 @@ gulp.task('css', () => {
   return gulp
     .src(paths.css)
     .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([autoprefixer()]))
     .pipe(cleanCSS())
     .pipe(gulp.dest(path.join(paths.dist, 'css')));
 });
