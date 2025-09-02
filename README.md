@@ -1,4 +1,4 @@
-# Social Discover Group's MarTech SDVentures Test Task
+# Social Discovery Group's MarTech SDVentures Test Task
 
 ## How to Run
 
