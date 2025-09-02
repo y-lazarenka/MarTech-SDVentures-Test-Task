@@ -25,7 +25,13 @@ signUpBtn.addEventListener('click', () => {
 });
 
 closeRegisterModalBtn.addEventListener('click', () => {
-  closeDialog();
+  regiseterModal.close();
+  registerFormContainer.classList.add('show');
+  thankYouContainer.classList.remove('show');
+  document.body.classList.remove('modal-open');
+
+  emailInput.value = '';
+  passwordInput.value = '';
 });
 
 registerForm.addEventListener('submit', submitForm);
@@ -90,14 +96,4 @@ async function submitForm(event) {
   } catch (error) {
     console.error('Error submitting JSON:', error);
   }
-}
-
-function closeDialog() {
-  regiseterModal.close();
-  registerFormContainer.classList.add('show');
-  thankYouContainer.classList.remove('show');
-  document.body.classList.remove('modal-open');
-
-  emailInput.value = '';
-  passwordInput.value = '';
 }
