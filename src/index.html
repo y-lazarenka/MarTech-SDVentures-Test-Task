@@ -72,14 +72,15 @@
           To register, enter the mail to which our news is sent and set your
           password
         </h2>
-        <form class="register-form">
-          <div class="input-container">
+        <form class="register-form" id="register-form">
+          <div class="input-container" id="email-input-container">
             <div class="input">
+              <!-- why to use text instead of email? need to disable default validation -->
               <input
-                type="email"
-                id="email"
+                type="text"
                 placeholder="Example@email.com"
-                required
+                id="email"
+                autocomplete
               />
               <img
                 src="assets/icons/input-error.svg"
@@ -87,16 +88,11 @@
                 alt="Error icon"
               />
             </div>
-            <div class="error-message" id="email-error"></div>
+            <div class="error-message"></div>
           </div>
-          <div class="input-container">
+          <div class="input-container" id="password-input-container">
             <div class="input">
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                required
-              />
+              <input type="password" placeholder="Password" id="password" />
               <img
                 src="assets/icons/input-error.svg"
                 class="error-icon"
@@ -105,7 +101,7 @@
             </div>
             <div class="error-message" id="password-error"></div>
           </div>
-          <button type="button" class="primary-btn submit-btn">Submit</button>
+          <button type="submit" class="primary-btn submit-btn">Submit</button>
         </form>
       </div>
       <div id="thank-you" class="thank-you">
