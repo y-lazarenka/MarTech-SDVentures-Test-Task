@@ -1,0 +1,148 @@
+@use 'sass:map';
+@use '../utils/variables';
+@use '../utils/mixins';
+
+.register-modal {
+  &[open] {
+    display: flex;
+  }
+
+  &::backdrop {
+    backdrop-filter: blur(15px);
+  }
+
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  overflow: auto;
+  width: calc(100% - 32px);
+  max-width: 1270px;
+
+  background-color: variables.$bg-white;
+  box-shadow: 0px 0px 10px 0px variables.$shadow-base;
+
+  border-radius: 20px;
+  padding: 75px 16px 75px 16px;
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
+    border-radius: 50px;
+    padding: 150px 45px 150px 45px;
+  }
+
+  .close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    right: 10px;
+    top: 20px;
+    width: 20.76px;
+    height: 20.76px;
+    @media (min-width: map.get(variables.$breakpoints, 'md')) {
+      right: 45px;
+      top: 45px;
+      width: 28.53px;
+      height: 28.54px;
+    }
+  }
+
+  .close-btn-img {
+    max-width: 100%;
+  }
+}
+
+.register-form-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
+    gap: 30px;
+  }
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
+    gap: 30px;
+  }
+
+  .submit-btn {
+    width: 166px;
+    @media (min-width: map.get(variables.$breakpoints, 'md')) {
+      width: 387px;
+    }
+  }
+}
+
+.register-form-title {
+  font-weight: variables.$font-weight-bold;
+  text-align: center;
+  @include mixins.tracking-tight();
+
+  font-size: 17px;
+  line-height: 24px;
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  gap: 8px;
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
+    gap: 12px;
+  }
+
+  .input {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid variables.$text-black;
+  }
+
+  &.error .input {
+    border-color: variables.$error-color;
+  }
+
+  .error-message {
+    text-align: center;
+    font-weight: variables.$font-weight-regular;
+    font-size: 12px;
+    line-height: 18px;
+    color: variables.$error-color;
+  }
+
+  .error-icon {
+    display: none;
+  }
+
+  &.error .error-icon {
+    display: block;
+  }
+
+  input {
+    font-weight: variables.$font-weight-regular;
+    width: 100%;
+    text-align: center;
+
+    font-size: 14px;
+    line-height: 22px;
+    @media (min-width: map.get(variables.$breakpoints, 'md')) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  input::placeholder {
+    color: variables.$text-grey;
+  }
+}

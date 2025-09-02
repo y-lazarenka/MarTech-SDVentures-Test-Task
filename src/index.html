@@ -37,9 +37,9 @@
   </head>
   <body>
     <div class="hero-container">
-      <picture>
+      <picture class="flex">
         <source
-          media="(max-width: 320px)"
+          media="(max-width: 375px)"
           srcset="assets/images/logo-mobile.png"
         />
         <img src="assets/images/logo-desktop.png" class="hero-img" alt="logo" />
@@ -52,12 +52,62 @@
         <ol class="hero-list">
           <li class="hero-li">Subscribe to our News</li>
           <li class="hero-li">
-            <button class="primary-btn flex-1">Sign Up</button>
+            <button class="primary-btn flex-1" id="sign-up">Sign Up</button>
           </li>
           <li class="hero-li">Check your email inbox</li>
           <li class="hero-li">Wait till September 22</li>
         </ol>
       </section>
     </div>
+    <dialog id="register-modal" class="register-modal">
+      <button id="close-register-modal-btn" class="close-btn">
+        <img
+          src="assets/icons/close.svg"
+          alt="Close Btn"
+          class="close-btn-img"
+        />
+      </button>
+      <div class="register-form-container">
+        <h2 class="register-form-title">
+          To register, enter the mail to which our news is sent and set your
+          password
+        </h2>
+        <form class="register-form">
+          <div class="input-container">
+            <div class="input">
+              <input
+                type="email"
+                id="email"
+                placeholder="Example@email.com"
+                required
+              />
+              <img
+                src="assets/icons/input-error.svg"
+                class="error-icon"
+                alt="Error icon"
+              />
+            </div>
+            <div class="error-message" id="email-error"></div>
+          </div>
+          <div class="input-container">
+            <div class="input">
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+              <img
+                src="assets/icons/input-error.svg"
+                class="error-icon"
+                alt="Error icon"
+              />
+            </div>
+            <div class="error-message" id="password-error"></div>
+          </div>
+          <button type="button" class="primary-btn submit-btn">Submit</button>
+        </form>
+      </div>
+    </dialog>
   </body>
 </html>

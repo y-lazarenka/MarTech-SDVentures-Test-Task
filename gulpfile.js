@@ -67,8 +67,14 @@ gulp.task('css', () => {
 
 gulp.task('images', () => {
   return gulp
-    .src(path.join(paths.assets, '/images/**/*'))
+    .src(path.join(paths.assets, '/images/**/*'), { encoding: false })
     .pipe(gulp.dest(path.join(paths.dist, '/assets/images')));
+});
+
+gulp.task('icons', () => {
+  return gulp
+    .src(path.join(paths.assets, '/icons/**/*'), { encoding: false })
+    .pipe(gulp.dest(path.join(paths.dist, '/assets/icons')));
 });
 
 gulp.task('clean', () => {
@@ -80,7 +86,7 @@ gulp.task('clean', () => {
 
 gulp.task(
   'build',
-  gulp.series('clean', 'html', 'fonts', 'css', 'js', 'images')
+  gulp.series('clean', 'html', 'fonts', 'css', 'js', 'icons', 'images')
 );
 
 gulp.task('watch', () => {
@@ -88,5 +94,6 @@ gulp.task('watch', () => {
   gulp.watch(paths.fonts, gulp.series('fonts'));
   gulp.watch(paths.css, gulp.series('css'));
   gulp.watch(paths.js, gulp.series('js'));
+  gulp.watch(path.join(paths.assets, '/icons/**/*'), gulp.series('icons'));
   gulp.watch(path.join(paths.assets, '/images/**/*'), gulp.series('images'));
 });
