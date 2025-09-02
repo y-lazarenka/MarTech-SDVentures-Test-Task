@@ -23,9 +23,11 @@
 
   border-radius: 20px;
   padding: 75px 16px 75px 16px;
+  min-height: 439px; // to ensure that layout doesn't jump that views change from register-form to thank-you
   @media (min-width: map.get(variables.$breakpoints, 'md')) {
     border-radius: 50px;
     padding: 150px 45px 150px 45px;
+    min-height: 652px;
   }
 
   .close-btn {
@@ -52,8 +54,13 @@
 }
 
 .register-form-container {
-  display: flex;
+  display: none;
+  &.show {
+    display: flex;
+  }
+
   flex-direction: column;
+  max-width: 620px;
 
   gap: 15px;
   @media (min-width: map.get(variables.$breakpoints, 'md')) {
@@ -144,5 +151,33 @@
 
   input::placeholder {
     color: variables.$text-grey;
+  }
+}
+
+.thank-you {
+  display: none;
+  &.show {
+    display: flex;
+  }
+
+  flex-direction: column;
+  gap: 12px;
+  max-width: 176px;
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
+    gap: 20px;
+    max-width: unset;
+  }
+
+  .thank-you-desc {
+    text-align: center;
+    color: variables.$text-black;
+    font-weight: variables.$font-weight-bold;
+    line-height: 100%;
+    @include mixins.tracking-tight();
+
+    font-size: 14px;
+    @media (min-width: map.get(variables.$breakpoints, 'md')) {
+      font-size: 28px;
+    }
   }
 }
