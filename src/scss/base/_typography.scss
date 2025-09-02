@@ -21,7 +21,7 @@ $vivid-counter: vivid-counter;
   counter-increment: $vivid-counter;
   font-weight: variables.$font-weight-regular;
   line-height: 100%;
-  @include mixins.tracking-tight();
+  @include mixins.tracking-tighter();
 
   font-size: 18.82px;
   @media (min-width: map.get(variables.$breakpoints, 'sm')) {
@@ -33,7 +33,7 @@ $vivid-counter: vivid-counter;
   content: counter($vivid-counter) '.';
   align-self: end;
   @include mixins.vivid-display();
-  @include mixins.tracking-tight();
+  @include mixins.tracking-tighter();
   font-weight: variables.$font-weight-extra-bold;
   line-height: 100%;
 
@@ -47,7 +47,7 @@ $vivid-counter: vivid-counter;
 
 .hero-title {
   @include mixins.vivid-display();
-  @include mixins.tracking-tight();
+  @include mixins.tracking-tighter();
   font-weight: variables.$font-weight-extra-bold;
   line-height: 110%;
 

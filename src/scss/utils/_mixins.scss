@@ -16,6 +16,10 @@
   -webkit-text-fill-color: transparent;
 }
 
-@mixin tracking-tight {
+@mixin tracking-tighter {
   letter-spacing: -2px; // todo: letter-spacing doesn't except % values
+}
+
+@mixin tracking-tight {
+  letter-spacing: -1px; // todo: letter-spacing doesn't except % values
 }

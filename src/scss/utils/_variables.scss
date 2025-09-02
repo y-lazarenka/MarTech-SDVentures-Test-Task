@@ -10,6 +10,10 @@ $text-white: #ffffff;
 $placeholder-grey: #b3b3b3;
 $error-color: #f22533;
 
+$bg-white: #ffffff;
+
+$shadow-base: #0000001a;
+
 // Font Weights
 $font-weight-light: 400;
 $font-weight-regular: 600;
@@ -21,5 +25,5 @@ $font-size-base: 16px;
 
 // Breakpoints
 $breakpoints: (
-  'sm': 320px,
+  'sm': 375px,
 );

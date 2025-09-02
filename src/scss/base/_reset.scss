@@ -122,3 +122,14 @@ button {
   outline: none;
   text-align: inherit;
 }
+
+dialog {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+dialog::backdrop {
+  background: transparent;
+}
