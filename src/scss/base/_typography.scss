@@ -10,7 +10,7 @@ $vivid-counter: vivid-counter;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
     font-size: 30px;
   }
 }
@@ -24,7 +24,7 @@ $vivid-counter: vivid-counter;
   @include mixins.tracking-tighter();
 
   font-size: 18.82px;
-  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
     font-size: 38px;
   }
 }
@@ -39,7 +39,7 @@ $vivid-counter: vivid-counter;
 
   margin-right: 10px;
   font-size: 33px;
-  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
     margin-right: 20px;
     font-size: 55px;
   }
@@ -52,7 +52,7 @@ $vivid-counter: vivid-counter;
   line-height: 110%;
 
   font-size: 35px;
-  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
     font-size: 77px;
   }
 }

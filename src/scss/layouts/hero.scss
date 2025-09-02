@@ -6,7 +6,7 @@
   gap: 20px;
 
   flex-direction: column;
-  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -18,10 +18,12 @@
   max-width: 100%;
   width: 290px;
   height: 274px;
-  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+  margin: 0 auto;
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
     max-width: unset;
     width: 729px;
     height: 689px;
+    margin: unset;
   }
 }
 
@@ -30,7 +32,7 @@
   flex-direction: column;
 
   gap: 18.33px;
-  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+  @media (min-width: map.get(variables.$breakpoints, 'md')) {
     gap: 52.79px;
     width: 483px;
     padding-right: 30px;

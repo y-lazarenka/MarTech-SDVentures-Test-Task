@@ -6,8 +6,8 @@ $vivid-primary-color: #e51726;
 $vivid-secondary-color: #d4208c;
 
 $text-black: #3a3a3a;
+$text-grey: #b3b3b3;
 $text-white: #ffffff;
-$placeholder-grey: #b3b3b3;
 $error-color: #f22533;
 
 $bg-white: #ffffff;
@@ -25,5 +25,6 @@ $font-size-base: 16px;
 
 // Breakpoints
 $breakpoints: (
-  'sm': 375px,
+  'sm': 0,
+  'md': 376px,
 );
