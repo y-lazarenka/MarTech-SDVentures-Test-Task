@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use './base/fonts';
+@use './base/reset';
+@use './base/typography';
+@use './utils/variables';
+@use './components/buttons';
+@use './layouts/hero.scss';
+@use './utils/helpers.scss';
+
+body {
+  font-size: variables.$font-size-base;
+  font-family: variables.$font-primary;
+
+  padding: 16px;
+  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+    padding: 90px;
+  }
+}

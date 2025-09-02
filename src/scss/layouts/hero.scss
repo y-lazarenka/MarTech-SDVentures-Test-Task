@@ -1,6 +1,30 @@
 @use 'sass:map';
 @use '../utils/variables';
 
+.hero-container {
+  display: flex;
+  gap: 20px;
+
+  flex-direction: column;
+  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.hero-img {
+  object-fit: contain;
+
+  max-width: 100%;
+  width: 290px;
+  height: 274px;
+  @media (min-width: map.get(variables.$breakpoints, 'sm')) {
+    max-width: unset;
+    width: 729px;
+    height: 689px;
+  }
+}
+
 .hero-section {
   display: flex;
   flex-direction: column;
