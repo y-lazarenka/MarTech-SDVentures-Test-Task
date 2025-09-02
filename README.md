@@ -28,11 +28,9 @@ docker run -p 3000:3000 martech-test:latest
 - Encountered an issue with gulp courrpting font files: https://github.com/gulpjs/gulp/issues/2797
 - In figma design `%` values are used for `letter-spacing`. Since `%` is not supported by browsers, pixel values were used instead (approximated to the design).
 - A `375px` breakpoint was added for iPhone SE design to make the app more responsive. This can be easily adjusted in `_variables.scss`.
-- Decided to use `<picture />` instead of `<img />` with srcset and sizes for more control over which logo to display (mobile vs desktop). Using `<img />` with srcset can sometimes load the desktop logo on small devices due to high device pixel ratios.
+- Decided to use `<picture />` instead of `<img />` with `srcset` and `sizes` for more control over which logo to display (mobile vs desktop). Using `<img />` with `srcset` can sometimes load the desktop logo on small devices due to high device pixel ratios.
 
 ## To Improve
 
 - Optimize SVGs sizes.
 - Add labels for inputs elements for better accessibility.
-
-By the way, this test task took 1825 lines of code.
